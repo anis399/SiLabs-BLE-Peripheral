@@ -53,13 +53,11 @@
 #include "em_cmu.h"    /* Clock Management Unit     */
 
 //Components
-#include "sl_bluetooth.h"
-#include "gatt_db.h"
 #include "printf.h"
 
 //Custom
+#include "BLE_Peripheral_Config.h"
 #include "BLE_Peripheral.h"
-
 /*******************************************************************************
  * Macros
  ******************************************************************************/

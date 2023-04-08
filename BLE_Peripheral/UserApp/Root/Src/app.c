@@ -50,6 +50,9 @@
  ******************************************************************************/
 void app_init(void)
 {
+  printf("Peripheral\n");
+
+  Start_Advertising(&BLE_NAME,  BLE_NAME_LEN);
 
 }
 
