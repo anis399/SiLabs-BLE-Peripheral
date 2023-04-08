@@ -2,7 +2,9 @@
 
 ## Walkthrough
 This project creates a basic BLE Peripheral device that advertises under a predefined name and password. The project is based on an "Empty C project," so some components must be installed. Refer to "BLE Components.txt" for more information.
-<br />
+
+please use the following bootloader soo the app may launch correctly "bootloader-storage-internal-single-512k.s37"
+
 
 ## Tools
 This project was developed using SSv5 and MCUs such as BGM220, BGM210, and more.
