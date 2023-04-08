@@ -1,0 +1,19 @@
+Peripheral
+Stack:
+	Bluetooth Core
+	Bluetooth on-demand start
+	GATT Client
+	GATT Server
+	Security
+	System
+Feature:
+	Advertising Base Feature
+	Connection
+	Scanner Base Feature
+GATT:
+	Configuration
+
+IO Stream:
+	USART (USART0 PA05->Tx PA06->Rx)
+
+Tiny Printf
