@@ -25,7 +25,18 @@ toolchain_settings: []
 component:
 - {id: BGM220PC22HNA}
 - {id: sl_system}
+- {id: bluetooth_feature_connection}
+- {id: bluetooth_feature_advertiser}
+- instance: [vcom]
+  id: iostream_usart
+- {id: bluetooth_feature_sm}
+- {id: bluetooth_feature_system}
+- {id: gatt_configuration}
+- {id: printf}
+- {id: bluetooth_stack}
+- {id: bluetooth_on_demand_start}
 - {id: device_init}
+- {id: bluetooth_feature_gatt}
 define:
 - {name: DEBUG_EFM}
 ui_hints: {}
