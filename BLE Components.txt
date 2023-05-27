@@ -2,14 +2,14 @@ Peripheral
 Stack:
 	Bluetooth Core
 	Bluetooth on-demand start
-	GATT Client
+	//GATT Client
 	GATT Server
-	Security
+	Security Manager
 	System
 Feature:
 	Advertising Base Feature
 	Connection
-	Scanner Base Feature
+	//Scanner Base Feature
 GATT:
 	Configuration
 
