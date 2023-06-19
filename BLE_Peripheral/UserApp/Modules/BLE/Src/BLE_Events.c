@@ -172,6 +172,10 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
       printf("BLE evt: connection closed\n");
 #endif
 
+
+      sc = sl_bt_sm_delete_bondings();
+      BLE_sl_status_display(sc);
+
       BLE_Device_Connected = false;
       // Start general advertising and enable connections.
       sc = sl_bt_advertiser_start(BLE_Advertising_Set_Handle,
@@ -239,10 +243,10 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
     printf("BLE evt: server attribute value\n");
 #endif
 
-    if(gattdb_systick_fromCenteral == evt->data.evt_gatt_server_characteristic_status.characteristic)
+    if(gattdb_status_from_vehicle == evt->data.evt_gatt_server_characteristic_status.characteristic)
       {
 
-        sc = sl_bt_gatt_server_read_attribute_value(gattdb_systick_fromCenteral,
+        sc = sl_bt_gatt_server_read_attribute_value(gattdb_status_from_vehicle,
                                                     0,
                                                     sizeof(buf),
                                                     &bufSize,
@@ -251,6 +255,32 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
           {
             BLE_sl_status_display(sc);
           }
+
+        else
+          {
+            printf("Data received\n\t");
+            for(int i = 0; i < bufSize; i++)
+              printf("%c",buf[i]);
+            printf("\n");
+          }
+
+        static uint8_t count = 0;
+        sc = sl_bt_gatt_server_send_indication(BLE_Connection_Handle,
+                                               gattdb_commands_from_user,
+                                               1,
+                                               &count);
+        count++;
+
+        if(sc != SL_STATUS_OK)
+          {
+            BLE_sl_status_display(sc);
+          }
+
+        else
+          {
+            printf("Indication Success\n");
+          }
+
       }
     break;
 

@@ -34,7 +34,6 @@
  *  @note  :
  *  @todo  :
  *
- * For more information, please refer to the <a href="https://example.com/my_document.pdf">documentation</a>.
 *******************************************************************************/
 
 /******************************************************************************

@@ -30,7 +30,7 @@ volatile bool BLE_Device_Connected = false;
  * Interface Functions
  ******************************************************************************/
 
- /******************************************************************************
+/******************************************************************************
  * Function name:
  *
  * Description  :
@@ -76,18 +76,18 @@ RetVal_t Start_Advertising(uint8_t name[], uint8_t nameLen)
 }
 
 /******************************************************************************
-* Function name:
-*
-* Description  :
-* Parameters   :
-* Returns      :
-*
-* Known issues :
-* Note         :
-*
-* @TODO : when stopping advertising , check if connection is open first,
-*         close connection, stop advertising and then stop BLE
-* ****************************************************************************/
+ * Function name:
+ *
+ * Description  :
+ * Parameters   :
+ * Returns      :
+ *
+ * Known issues :
+ * Note         :
+ *
+ * @TODO : when stopping advertising , check if connection is open first,
+ *         close connection, stop advertising and then stop BLE
+ * ****************************************************************************/
 RetVal_t Stop_Advertising(void)
 {
   RetVal_t ret = FuncFailed;
@@ -110,7 +110,7 @@ RetVal_t Stop_Advertising(void)
         }
     }
 
- return ret;
+  return ret;
 }
 
 
@@ -122,13 +122,13 @@ RetVal_t Stop_Advertising(void)
  * Function name:
  *
  * Description :
-* Parameters   : [in] sl_status_t.
-* Returns      :
-*
-* Known issues :
-* Note         :
-*
-* ****************************************************************************/
+ * Parameters   : [in] sl_status_t.
+ * Returns      :
+ *
+ * Known issues :
+ * Note         :
+ *
+ * ****************************************************************************/
 void BLE_sl_status_display(sl_status_t sc)
 {
 #ifdef DEBUG_BLE_SL_STATUS
@@ -137,6 +137,14 @@ void BLE_sl_status_display(sl_status_t sc)
 
     case SL_STATUS_OK:
       printf("sl status: success\n");
+      break;
+
+    case SL_STATUS_IN_PROGRESS:
+      printf("sl status: in progress\n");
+      break;
+
+    case SL_STATUS_TIMEOUT:
+      printf("sl status: timeout\n");
       break;
 
     case SL_STATUS_NOT_SUPPORTED:

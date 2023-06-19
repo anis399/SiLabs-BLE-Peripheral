@@ -8,7 +8,7 @@
 
     <!--Device Name-->
     <characteristic const="false" id="device_name" name="Device Name" sourceId="org.bluetooth.characteristic.gap.device_name" uuid="2A00">
-      <value length="8" type="utf-8" variable_length="true">AnisXXXX</value>
+      <value length="240" type="utf-8" variable_length="true">AnisXXXX</value>
       <properties>
         <read authenticated="false" bonded="false" encrypted="false"/>
         <write authenticated="false" bonded="false" encrypted="false"/>
@@ -48,20 +48,20 @@
     </characteristic>
   </service>
 
-  <!--Timing-->
-  <service advertise="false" id="timing_service" name="Timing" requirement="mandatory" sourceId="" type="primary" uuid="60a1b080-319c-48c0-a090-228ade4ae603">
+  <!--Vehicle Basic Commands-->
+  <service advertise="false" id="vehicle_service" name="Vehicle Basic Commands" requirement="mandatory" sourceId="" type="primary" uuid="60a1b080-319c-48c0-a090-228ade4ae603">
 
-    <!--Systick_fromCenteral-->
-    <characteristic const="false" id="systick_fromCenteral" name="Systick_fromCenteral" sourceId="" uuid="d9c3200d-7405-4960-8502-5b347be1f772">
-      <value length="4" type="hex" variable_length="false">00</value>
+    <!--Status_From_Vehicle-->
+    <characteristic const="false" id="status_from_vehicle" name="Status_From_Vehicle" sourceId="" uuid="d9c3200d-7405-4960-8502-5b347be1f772">
+      <value length="230" type="hex" variable_length="true">00</value>
       <properties>
         <write authenticated="true" bonded="true" encrypted="true"/>
       </properties>
     </characteristic>
 
-    <!--Systick_fromPeripheral-->
-    <characteristic const="false" id="systick_fromPeripheral" name="Systick_fromPeripheral" sourceId="" uuid="ee656596-d405-42c8-9054-84504dee3963">
-      <value length="4" type="hex" variable_length="false">00</value>
+    <!--Commands_From_User-->
+    <characteristic const="false" id="commands_from_user" name="Commands_From_User" sourceId="" uuid="ee656596-d405-42c8-9054-84504dee3963">
+      <value length="230" type="hex" variable_length="true">00</value>
       <properties>
         <indicate authenticated="true" bonded="true" encrypted="true"/>
       </properties>

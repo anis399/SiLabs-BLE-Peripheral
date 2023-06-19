@@ -80,9 +80,9 @@
  * Defines
  ******************************************************************************/
 //BLE Configurations
-#define BLE_PASWORD   ((uint32_t)123456)
-#define BLE_NAME      "Anis1234"
-#define BLE_NAME_LEN  ((uint8_t)8)
+#define BLE_PASWORD   ((uint32_t)123321)
+#define BLE_NAME      "RASH_TRONICS .LTD"
+#define BLE_NAME_LEN  ((uint8_t)17)
 
 //Advertising timing
 #define BLE_MIN_ADV_INTERVAL  ((uint16_t)160 ) ///< Minimum advertising interval.
@@ -102,9 +102,9 @@
 
 
 //********************************** DEBUG ON **********************************
-#define DEBUG_BLE_SL_STATUS
-#define DEBUG_BLE_FUNCTIONS
-#define DEBUG_BLE_EVTs
+#define DEBUG_BLE_SL_STATUS       1  /**< Basic debug messages over sl BLE status >*/
+#define DEBUG_BLE_FUNCTIONS       1  /**< Basic debug messages over functions >*/
+#define DEBUG_BLE_EVTs            1  /**< Basic debug messages over BLE events >*/
 
 /*******************************************************************************
  * Typedef & Enums
